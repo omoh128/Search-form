@@ -1,0 +1,110 @@
+* {
+  box-sizing: border-box; }
+
+html, body {
+  width: 100%;
+  height: 100%;
+  font-family: sans-serif; }
+
+#app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column; }
+
+/*Parent Container*/
+.search-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative; }
+  .search-content .search-title {
+    color: #22b194;
+    font-weight: 400;
+    /*Absolute Position for Animation*/
+    position: absolute;
+    top: -7em;
+    /*< Start way of top*/
+    width: 15em;
+    opacity: 0;
+    /*< hidden by default (when the input is not expanded)*/
+    transition: all, 0.62s ease-in-out;
+    /*< all transition to be applied on any change*/
+    /*To toggle text animation and make it visibale*/ }
+    .search-content .search-title.show {
+      top: -3.4em;
+      opacity: 1; }
+
+fieldset {
+  outline: 0;
+  border: 0;
+  position: relative; }
+
+#search-bar {
+  /*Add some cool style to the input*/
+  height: 2.8em;
+  /*Start shrink*/
+  width: 2.8em;
+  padding: 8px;
+  font-size: 16px;
+  border: 0;
+  border-radius: 4px;
+  color: #535c68;
+  box-shadow: 0px 3px 19px 3px rgba(15, 15, 15, 0.2);
+  /*Setup some transition for the expand animation*/
+  transition: all, 0.7s;
+  /*Add placeholder style (Only for Chrome)*/ }
+  #search-bar:focus {
+    outline: 0;
+    /*We just need to change the width*/
+    width: 20em;
+    border: 1px solid rgba(100, 211, 189, 0.877);
+    box-shadow: 0px 0px 10px 0.3px rgba(100, 211, 189, 0.877); }
+    #search-bar:focus::-webkit-input-placeholder {
+      /*Show it on input expand*/
+      opacity: 0.8; }
+  #search-bar::-webkit-input-placeholder {
+    /*Start hidden since the input is shrunk*/
+    opacity: 0;
+    font-size: 16px;
+    color: #535c68;
+    width: 1px; }
+
+.icons-container {
+  /*Absolute positioning for putting it inside the input to look like a button icon*/
+  position: absolute;
+  top: 11px;
+  right: 21px;
+  width: 32px;
+  height: 31px;
+  cursor: pointer;
+  /*We create the Search Icon with borders and the after CSS peudo-element*/ }
+  .icons-container #search-icon {
+    /*Search icon (Circle)*/
+    position: relative;
+    top: 5px;
+    left: 8px;
+    width: 60%;
+    height: 60%;
+    opacity: 1;
+    border-radius: 50%;
+    border: 3px solid #22b194;
+    transition: opacity 0.25s ease, transform 0.43s ease-in-out;
+    box-shadow: 0px 0px 1px 0.2px rgba(170, 229, 218, 0.761);
+    /*Search Icon (line)*/ }
+    .icons-container #search-icon:after {
+      content: "";
+      position: absolute;
+      bottom: -9px;
+      right: -2px;
+      width: 4px;
+      border-radius: 3px;
+      transform: rotate(-35deg);
+      height: 10px;
+      background-color: #22b194;
+      box-shadow: 0px 0px 1px 0.2px rgba(170, 229, 218, 0.761); }
+
+/*# sourceMappingURL=Styles.css.map */
